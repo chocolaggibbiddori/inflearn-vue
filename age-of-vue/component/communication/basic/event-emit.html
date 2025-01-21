@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="app">
+  <app-header v-on:pass="logText"></app-header>
+  <app-content v-on:add="addNumber" v-bind:data="number"></app-content>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+  const appHeader = {
+    template: '<button v-on:click="passEvent">click me</button>',
+    methods: {
+      passEvent() {
+        this.$emit('pass');
+      }
+    }
+  };
+
+  const appContent ={
+    template: '<button v-on:click="addNumber">{{ data }}</button>',
+    props: ['data'],
+    methods: {
+      addNumber() {
+        this.$emit('add');
+      }
+    }
+  };
+
+  new Vue({
+    el: '#app',
+    data: {
+      number: 12
+    },
+    components: {
+      'app-header': appHeader,
+      'app-content': appContent
+    },
+    methods: {
+      logText() {
+        console.log('hi');
+      },
+      addNumber() {
+        ++this.number;
+      }
+    }
+  });
+</script>
+</body>
+</html>
