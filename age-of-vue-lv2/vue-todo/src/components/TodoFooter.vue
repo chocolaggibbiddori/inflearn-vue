@@ -9,7 +9,7 @@ export default {
   name: "TodoHeader",
   methods: {
     clearAll() {
-      localStorage.clear();
+      this.$emit('clearAll');
     }
   }
 }
