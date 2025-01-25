@@ -8,26 +8,26 @@
 </template>
 
 <script>
-import TodoHeader from '@/components/TodoHeader.vue';
-import TodoInput from '@/components/TodoInput.vue';
-import TodoList from '@/components/TodoList.vue';
-import TodoFooter from '@/components/TodoFooter.vue';
+import TodoHeader from "@/components/TodoHeader.vue";
+import TodoInput from "@/components/TodoInput.vue";
+import TodoList from "@/components/TodoList.vue";
+import TodoFooter from "@/components/TodoFooter.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
     TodoHeader,
     TodoInput,
     TodoList,
-    TodoFooter
-  }
-}
+    TodoFooter,
+  },
+};
 </script>
 
 <style>
 body {
   text-align: center;
-  background-color: #F6F6F6;
+  background-color: #f6f6f6;
 }
 
 input {

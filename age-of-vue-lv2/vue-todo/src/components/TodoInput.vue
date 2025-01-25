@@ -1,6 +1,6 @@
 <template>
   <div class="inputBox shadow">
-    <input type="text" v-model="newTodoItem" v-on:keyup.enter="addTodo">
+    <input type="text" v-model="newTodoItem" v-on:keyup.enter="addTodo" />
     <button v-on:click="addTodo">add</button>
 
     <button id="show-modal" @click="showModal = true">Show Modal</button>
@@ -13,36 +13,34 @@
 </template>
 
 <script>
-import Modal from '@/common/Modal.vue';
+import Modal from "@/common/Modal.vue";
 
 export default {
   name: "TodoInput",
   components: {
-    Modal
+    Modal,
   },
   data() {
     return {
-      newTodoItem: '',
-      showModal: false
-    }
+      newTodoItem: "",
+      showModal: false,
+    };
   },
   methods: {
     addTodo() {
-      if (this.newTodoItem === '') {
+      if (this.newTodoItem === "") {
         this.showModal = true;
         return;
       }
 
-      this.$store.commit('addTodo', this.newTodoItem);
+      this.$store.commit("addTodo", this.newTodoItem);
       this.clearInput();
     },
     clearInput() {
-      this.newTodoItem = '';
-    }
-  }
-}
+      this.newTodoItem = "";
+    },
+  },
+};
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

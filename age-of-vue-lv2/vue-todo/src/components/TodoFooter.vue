@@ -5,16 +5,14 @@
 </template>
 
 <script>
+import { mapMutations } from "vuex";
+
 export default {
   name: "TodoHeader",
   methods: {
-    clearAll() {
-      this.$store.commit('clearAll');
-    }
-  }
-}
+    ...mapMutations(["clearAll"]),
+  },
+};
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>
