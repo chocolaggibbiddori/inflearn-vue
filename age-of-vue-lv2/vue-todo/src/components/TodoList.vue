@@ -15,10 +15,10 @@ export default {
   name: "TodoInput",
   methods: {
     removeTodo(todoItem, idx) {
-      this.$emit('removeTodoItem', todoItem, idx);
+      this.$store.commit('removeTodoItem', {idx, todoItem})
     },
     toggleComplete(idx) {
-      this.$emit('toggleTodoItem', idx);
+      this.$store.commit('toggleComplete', idx);
     }
   }
 }

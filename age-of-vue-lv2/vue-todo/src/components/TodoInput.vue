@@ -33,7 +33,7 @@ export default {
         return;
       }
 
-      this.$emit('addTodo', this.newTodoItem);
+      this.$store.commit('addTodo', this.newTodoItem);
       this.clearInput();
     },
     clearInput() {
