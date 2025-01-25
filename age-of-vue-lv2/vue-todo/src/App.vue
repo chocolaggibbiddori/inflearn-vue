@@ -2,8 +2,7 @@
   <div id="app">
     <todo-header></todo-header>
     <todo-input v-on:addTodo="addTodo"></todo-input>
-    <todo-list v-bind:todoItems="todoItems"
-               v-on:removeTodoItem="removeTodoItem"
+    <todo-list v-on:removeTodoItem="removeTodoItem"
                v-on:toggleTodoItem="toggleComplete"></todo-list>
     <todo-footer v-on:clearAll="clearAll"></todo-footer>
   </div>
@@ -26,13 +25,6 @@ export default {
   data() {
     return {
       todoItems: []
-    }
-  },
-  created() {
-    for (let i = 0; i < localStorage.length; i++) {
-      const key = localStorage.key(i);
-      const item = localStorage.getItem(key);
-      this.todoItems.push(JSON.parse(item));
     }
   },
   methods: {
