@@ -1,35 +1,35 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Title</title>
-</head>
-<body>
-<div id="app"></div>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+  </head>
+  <body>
+    <div id="app"></div>
 
-<script>
-  let div = document.querySelector('#app');
-  let viewModel = {};
+    <script>
+      let div = document.querySelector('#app');
+      let viewModel = {};
 
-  (function() {
-    function init() {
-      Object.defineProperty(viewModel, 'str', {
-        get: function () {
-          console.log('access');
-        },
-        set: function (value) {
-          console.log('set', value);
-          render(value);
+      (function () {
+        function init() {
+          Object.defineProperty(viewModel, 'str', {
+            get: function () {
+              console.log('access');
+            },
+            set: function (value) {
+              console.log('set', value);
+              render(value);
+            }
+          });
         }
-      });
-    }
 
-    function render(value) {
-      div.innerHTML = value;
-    }
+        function render(value) {
+          div.innerHTML = value;
+        }
 
-    init();
-  })();
-</script>
-</body>
+        init();
+      })();
+    </script>
+  </body>
 </html>

@@ -1,42 +1,43 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Title</title>
-</head>
-<body>
-<div id="app">
-  <app-header v-bind:data="this.num"></app-header>
-  <app-content v-on:pass="increaseNumber"></app-content>
-</div>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+  </head>
+  <body>
+    <div id="app">
+      <app-header v-bind:data="this.num"></app-header>
+      <app-content v-on:pass="increaseNumber"></app-content>
+    </div>
 
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-<script>
-  new Vue({
-    el: '#app',
-    components: {
-      'app-header': {
-        template: '<div>header {{ data }}</div>',
-        props: ['data']
-      },
-      'app-content': {
-        template: '<div>content <button v-on:click="passNum">pass</button></div>',
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+      new Vue({
+        el: '#app',
+        components: {
+          'app-header': {
+            template: '<div>header {{ data }}</div>',
+            props: ['data']
+          },
+          'app-content': {
+            template:
+              '<div>content <button v-on:click="passNum">pass</button></div>',
+            methods: {
+              passNum() {
+                this.$emit('pass', 10, 20);
+              }
+            }
+          }
+        },
+        data: {
+          num: 0
+        },
         methods: {
-          passNum() {
-            this.$emit('pass', 10, 20);
+          increaseNumber(num1, num2) {
+            this.num = num1 + num2;
           }
         }
-      }
-    },
-    data: {
-      num: 0
-    },
-    methods: {
-      increaseNumber(num1, num2) {
-        this.num = num1 + num2;
-      }
-    }
-  })
-</script>
-</body>
+      });
+    </script>
+  </body>
 </html>

@@ -1,23 +1,23 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Title</title>
-</head>
-<body>
-<div id="app"></div>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+  </head>
+  <body>
+    <div id="app"></div>
 
-<script>
-  function Vue() {
-    this.logText = () => console.log('hello');
-  }
+    <script>
+      function Vue() {
+        this.logText = () => console.log('hello');
+      }
 
-  let vm = new Vue({
-    el: '#app',
-    data: {
-      msg: 'hi'
-    }
-  });
-</script>
-</body>
+      let vm = new Vue({
+        el: '#app',
+        data: {
+          msg: 'hi'
+        }
+      });
+    </script>
+  </body>
 </html>

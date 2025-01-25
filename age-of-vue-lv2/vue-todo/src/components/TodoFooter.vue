@@ -5,13 +5,13 @@
 </template>
 
 <script>
-import { mapMutations } from "vuex";
+import { mapMutations } from 'vuex';
 
 export default {
-  name: "TodoHeader",
+  name: 'TodoHeader',
   methods: {
-    ...mapMutations(["clearAll"]),
-  },
+    ...mapMutations(['clearAll'])
+  }
 };
 </script>
 

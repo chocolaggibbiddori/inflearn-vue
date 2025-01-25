@@ -13,9 +13,7 @@ export default {
       this.$emit('renew');
     }
   }
-}
+};
 </script>
 
-<style>
-
-</style>
+<style></style>

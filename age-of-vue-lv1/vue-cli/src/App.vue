@@ -5,13 +5,13 @@
 </template>
 
 <script>
-import AppHeader from "@/components/AppHeader.vue";
+import AppHeader from '@/components/AppHeader.vue';
 
 export default {
   data() {
     return {
       str: 'Header'
-    }
+    };
   },
   components: {
     AppHeader
@@ -21,9 +21,7 @@ export default {
       this.str = 'Hi';
     }
   }
-}
+};
 </script>
 
-<style>
-
-</style>
+<style></style>

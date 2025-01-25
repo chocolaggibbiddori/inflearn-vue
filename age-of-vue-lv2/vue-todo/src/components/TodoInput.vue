@@ -13,33 +13,33 @@
 </template>
 
 <script>
-import Modal from "@/common/Modal.vue";
+import Modal from '@/common/Modal.vue';
 
 export default {
-  name: "TodoInput",
+  name: 'TodoInput',
   components: {
-    Modal,
+    Modal
   },
   data() {
     return {
-      newTodoItem: "",
-      showModal: false,
+      newTodoItem: '',
+      showModal: false
     };
   },
   methods: {
     addTodo() {
-      if (this.newTodoItem === "") {
+      if (this.newTodoItem === '') {
         this.showModal = true;
         return;
       }
 
-      this.$store.commit("addTodo", this.newTodoItem);
+      this.$store.commit('addTodo', this.newTodoItem);
       this.clearInput();
     },
     clearInput() {
-      this.newTodoItem = "";
-    },
-  },
+      this.newTodoItem = '';
+    }
+  }
 };
 </script>
 

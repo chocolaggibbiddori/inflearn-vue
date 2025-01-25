@@ -17,18 +17,18 @@
 </template>
 
 <script>
-import { mapGetters, mapMutations } from "vuex";
+import { mapGetters, mapMutations } from 'vuex';
 
 export default {
-  name: "TodoInput",
+  name: 'TodoInput',
   computed: {
     ...mapGetters({
-      todoItems: "storedTodoItems",
-    }),
+      todoItems: 'storedTodoItems'
+    })
   },
   methods: {
-    ...mapMutations(["toggleComplete", "removeTodoItem"]),
-  },
+    ...mapMutations(['toggleComplete', 'removeTodoItem'])
+  }
 };
 </script>
 

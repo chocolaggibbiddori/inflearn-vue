@@ -2,11 +2,11 @@
   <form v-on:submit.prevent="submitForm">
     <div>
       <label for="username">id: </label>
-      <input id="username" type="text" v-model="username"/>
+      <input id="username" type="text" v-model="username" />
     </div>
     <div>
       <label for="password">pw: </label>
-      <input id="password" type="password" v-model="password"/>
+      <input id="password" type="password" v-model="password" />
     </div>
     <button type="submit">login</button>
   </form>
@@ -19,8 +19,8 @@ export default {
   data() {
     return {
       username: '',
-      password: '',
-    }
+      password: ''
+    };
   },
   methods: {
     submitForm() {
@@ -40,11 +40,10 @@ export default {
         })
         .catch(err => {
           console.log(err);
-        })
+        });
     }
   }
-}
+};
 </script>
 
-<style>
-</style>
+<style></style>

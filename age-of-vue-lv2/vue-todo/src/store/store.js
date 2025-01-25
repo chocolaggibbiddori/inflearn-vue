@@ -1,5 +1,5 @@
-import Vue from "vue";
-import Vuex from "vuex";
+import Vue from 'vue';
+import Vuex from 'vuex';
 
 Vue.use(Vuex);
 
@@ -13,18 +13,18 @@ const storage = {
     }
 
     return result;
-  },
+  }
 };
 
 export const store = new Vuex.Store({
   state: {
-    todoItems: storage.fetch(),
+    todoItems: storage.fetch()
   },
   mutations: {
     addTodo(state, payload) {
       const todo = {
         completed: false,
-        item: payload,
+        item: payload
       };
 
       localStorage.setItem(payload, JSON.stringify(todo));
@@ -42,11 +42,11 @@ export const store = new Vuex.Store({
     clearAll(state) {
       state.todoItems = [];
       localStorage.clear();
-    },
+    }
   },
   getters: {
     storedTodoItems(state) {
       return state.todoItems;
-    },
-  },
+    }
+  }
 });
