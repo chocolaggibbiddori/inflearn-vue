@@ -1,22 +1,22 @@
 <template>
   <div>
-    <div v-for="news in newsArr" :key="news.id">{{ news.title }}</div>
+    <div v-for="news in newsList" :key="news.id">{{ news.title }}</div>
   </div>
 </template>
 
 <script>
-import axios from 'axios';
+import { fetchNewsList } from '@/api';
 
 export default {
   data() {
     return {
-      newsArr: []
+      newsList: []
     };
   },
   created() {
-    axios
-      .get('https://api.hnpwa.com/v0/news/1.json')
-      .then(res => (this.newsArr = res.data));
+    fetchNewsList()
+      .then(res => (this.newsList = res.data))
+      .catch(error => console.error(error));
   }
 };
 </script>
