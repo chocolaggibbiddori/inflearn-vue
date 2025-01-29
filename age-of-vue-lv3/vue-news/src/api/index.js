@@ -4,14 +4,14 @@ const config = {
   baseUrl: 'https://api.hnpwa.com/v0'
 };
 
-export function fetchNewsList() {
+export function apiGetNewsList() {
   return axios.get(`${config.baseUrl}/news/1.json`);
 }
 
-export function fetchAskList() {
+export function apiGetAskList() {
   return axios.get(`${config.baseUrl}/ask/1.json`);
 }
 
-export function fetchJobsList() {
+export function apiGetJobsList() {
   return axios.get(`${config.baseUrl}/jobs/1.json`);
 }
