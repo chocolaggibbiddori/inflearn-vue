@@ -9,6 +9,10 @@ Vue.use(VueRouter);
 
 const routes = [
   {
+    path: '/',
+    redirect: '/news'
+  },
+  {
     path: '/news',
     component: NewsView
   },
