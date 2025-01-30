@@ -15,3 +15,7 @@ export function apiGetAskList() {
 export function apiGetJobsList() {
   return axios.get(`${config.baseUrl}/jobs/1.json`);
 }
+
+export function apiGetUser(userId) {
+  return axios.get(`${config.baseUrl}/user/${userId}.json`);
+}

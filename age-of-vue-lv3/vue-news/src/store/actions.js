@@ -1,4 +1,9 @@
-import { apiGetAskList, apiGetJobsList, apiGetNewsList } from '@/api';
+import {
+  apiGetAskList,
+  apiGetJobsList,
+  apiGetNewsList,
+  apiGetUser
+} from '@/api';
 
 export default {
   fetchNewsList({ commit }) {
@@ -14,6 +19,11 @@ export default {
   fetchAskList({ commit }) {
     apiGetAskList()
       .then(({ data }) => commit('setAskList', data))
+      .catch(error => console.error(error));
+  },
+  fetchUser({ commit }, userId) {
+    apiGetUser(userId)
+      .then(({ data }) => commit('setUser', data))
       .catch(error => console.error(error));
   }
 };

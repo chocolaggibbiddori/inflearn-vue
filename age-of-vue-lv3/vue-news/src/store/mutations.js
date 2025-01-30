@@ -7,5 +7,8 @@ export default {
   },
   setAskList(state, payload) {
     state.askList = payload;
+  },
+  setUser(state, payload) {
+    state.user = payload;
   }
 };

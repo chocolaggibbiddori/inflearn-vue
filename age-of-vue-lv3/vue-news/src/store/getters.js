@@ -1,11 +1,6 @@
 export default {
-  getNewsList(state) {
-    return state.newsList;
-  },
-  getJobList(state) {
-    return state.jobList;
-  },
-  getAskList(state) {
-    return state.askList;
-  }
+  getNewsList: state => state.newsList,
+  getJobList: state => state.jobList,
+  getAskList: state => state.askList,
+  getUser: state => state.user
 };
