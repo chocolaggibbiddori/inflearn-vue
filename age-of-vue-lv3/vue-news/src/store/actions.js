@@ -12,7 +12,7 @@ export default {
       .catch(error => console.error(error));
   },
   fetchItemList({ commit }, type) {
-    return apiGetItemList(type)
+    apiGetItemList(type)
       .then(({ data }) => commit('setItemList', data))
       .catch(error => console.error(error));
   }

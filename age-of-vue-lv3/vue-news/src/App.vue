@@ -1,9 +1,7 @@
 <template>
   <div id="app">
     <tool-bar></tool-bar>
-    <transition name="page">
-      <router-view></router-view>
-    </transition>
+    <router-view></router-view>
     <spinner :loading="loading"></spinner>
   </div>
 </template>
@@ -42,14 +40,4 @@ export default {
 };
 </script>
 
-<style>
-.page-enter-active,
-.page-leave-active {
-  transition: opacity 0.5s;
-}
-
-.page-enter,
-.page-leave-to {
-  opacity: 0;
-}
-</style>
+<style></style>

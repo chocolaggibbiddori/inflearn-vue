@@ -1,17 +1,17 @@
-import bus from '@/utils/bus';
 import { mapGetters } from 'vuex';
+import ListItem from '@/components/ListItem.vue';
+import bus from '@/utils/bus';
 
 export default {
+  components: {
+    ListItem
+  },
   computed: {
     ...mapGetters({
       itemList: 'getItemList'
     })
   },
-  created() {
-    bus.$emit('start:spinner');
-    this.$store
-      .dispatch('fetchItemList', this.$route.name)
-      .then(() => bus.$emit('end:spinner'))
-      .catch(error => console.error(error));
+  mounted() {
+    bus.$emit('end:spinner');
   }
 };
