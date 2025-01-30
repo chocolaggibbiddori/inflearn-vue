@@ -2,7 +2,7 @@
   <div>
     <p>name: {{ user.id }}</p>
     <p>karma: {{ user.karma }}</p>
-    <p>created: {{ user.created_time }}</p>
+    <p>created: {{ user.created }}</p>
   </div>
 </template>
 
