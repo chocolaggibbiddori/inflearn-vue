@@ -1,6 +1,8 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import createListView from '@/views/CreateListView';
+import NewsView from '@/views/NewsView.vue';
+import JobsView from '@/views/JobsView.vue';
+import AskView from '@/views/AskView.vue';
 import UserView from '@/views/UserView.vue';
 import ItemView from '@/views/ItemView.vue';
 
@@ -13,18 +15,18 @@ const routes = [
   },
   {
     path: '/news',
-    name: 'NewsView',
-    component: createListView('news')
+    name: 'news',
+    component: NewsView
   },
   {
     path: '/jobs',
-    name: 'JobsView',
-    component: createListView('jobs')
+    name: 'jobs',
+    component: JobsView
   },
   {
     path: '/ask',
-    name: 'AskView',
-    component: createListView('ask')
+    name: 'ask',
+    component: AskView
   },
   {
     path: '/user/:id',
