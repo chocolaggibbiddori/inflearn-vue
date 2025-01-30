@@ -4,6 +4,7 @@
 
 <script>
 import ListItem from '@/components/ListItem.vue';
+import bus from '@/utils/bus';
 import { mapGetters } from 'vuex';
 
 export default {
@@ -16,7 +17,13 @@ export default {
     })
   },
   created() {
-    this.$store.dispatch('fetchJobList');
+    bus.$emit('start:spinner');
+    setTimeout(() => {
+      this.$store
+        .dispatch('fetchJobList')
+        .then(() => bus.$emit('end:spinner'))
+        .catch(error => console.error(error));
+    }, 3000);
   }
 };
 </script>
