@@ -2,7 +2,7 @@
   <div>
     <section>
       <h2>{{ item.title }}</h2>
-      <user-profile>
+      <user-profile v-if="item.user">
         <template #userId>
           user:
           <router-link :to="`/user/${item.user}`">
