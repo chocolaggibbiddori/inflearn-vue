@@ -1,19 +1,16 @@
 import { apiGetItem, apiGetItemList, apiGetUser } from '@/api';
 
 export default {
-  fetchUser({ commit }, userId) {
-    apiGetUser(userId)
-      .then(({ data }) => commit('setUser', data))
-      .catch(error => console.error(error));
+  async fetchUser({ commit }, userId) {
+    const { data } = await apiGetUser(userId);
+    commit('setUser', data);
   },
-  fetchItem({ commit }, itemId) {
-    apiGetItem(itemId)
-      .then(({ data }) => commit('setItem', data))
-      .catch(error => console.error(error));
+  async fetchItem({ commit }, itemId) {
+    const { data } = await apiGetItem(itemId);
+    commit('setItem', data);
   },
-  fetchItemList({ commit }, type) {
-    apiGetItemList(type)
-      .then(({ data }) => commit('setItemList', data))
-      .catch(error => console.error(error));
+  async fetchItemList({ commit }, type) {
+    const { data } = await apiGetItemList(type);
+    commit('setItemList', data);
   }
 };
