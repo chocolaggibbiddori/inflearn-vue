@@ -1,6 +1,6 @@
 <template>
   <div>
-    <canvas id="myChart"></canvas>
+    <canvas id="myBarChart"></canvas>
   </div>
 </template>
 
@@ -9,7 +9,7 @@ import Chart from 'chart.js/auto';
 
 export default {
   mounted() {
-    const ctx = document.getElementById('myChart');
+    const ctx = document.getElementById('myBarChart');
 
     new Chart(ctx, {
       type: 'bar',
