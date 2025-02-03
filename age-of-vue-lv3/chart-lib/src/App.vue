@@ -1,37 +1,16 @@
 <template>
   <div>
     <h1>Chart.js</h1>
-    <canvas id="myChart"></canvas>
+    <bar-chart />
   </div>
 </template>
 
 <script>
-import Chart from 'chart.js/auto';
+import BarChart from '@/components/BarChart.vue';
 
 export default {
-  mounted() {
-    const ctx = document.getElementById('myChart');
-
-    new Chart(ctx, {
-      type: 'bar',
-      data: {
-        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-        datasets: [
-          {
-            label: '# of Votes',
-            data: [12, 19, 3, 5, 2, 3],
-            borderWidth: 1
-          }
-        ]
-      },
-      options: {
-        scales: {
-          y: {
-            beginAtZero: true
-          }
-        }
-      }
-    });
+  components: {
+    BarChart
   }
 };
 </script>
