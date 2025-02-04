@@ -13,7 +13,17 @@ module.exports = {
   },
   rules: {
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
-    'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off'
+    'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
+    'prettier/prettier': [
+      'error',
+      {
+        trailingComma: 'none',
+        singleQuote: true,
+        arrowParens: 'avoid',
+        semi: true,
+        bracketSpacing: true
+      }
+    ]
   },
   overrides: [
     {
