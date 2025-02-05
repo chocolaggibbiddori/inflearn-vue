@@ -8,17 +8,13 @@
       <label for="password">password: </label>
       <input id="password" type="password" v-model="password" />
     </div>
-    <div>
-      <label for="nickname">nickname: </label>
-      <input id="nickname" type="text" v-model="nickname" />
-    </div>
-    <button type="submit" :disabled="!isFormValid">Sign Up</button>
+    <button type="submit" :disabled="!isFormValid">Login</button>
     <p>{{ logMessage }}</p>
   </form>
 </template>
 
 <script>
-import { registerUser } from '@/api';
+import { loginUser } from '@/api';
 import { validateEmail } from '@/utils/validation';
 
 export default {
@@ -26,7 +22,6 @@ export default {
     return {
       username: '',
       password: '',
-      nickname: '',
       logMessage: ''
     };
   },
@@ -35,28 +30,26 @@ export default {
       return validateEmail(this.username);
     },
     isFormValid() {
-      return this.isUsernameValid && this.password && this.nickname.length >= 2;
+      return this.isUsernameValid && this.password;
     }
   },
   methods: {
     submitForm() {
       const userData = {
         username: this.username,
-        password: this.password,
-        nickname: this.nickname
+        password: this.password
       };
 
-      registerUser(userData)
+      loginUser(userData)
         .then(({ data }) => {
-          this.logMessage = `${data.username}님이 가입되었습니다.`;
+          this.logMessage = `${data.user.username}님 환영합니다!`;
           this.resetForm();
         })
-        .catch(error => console.error(error));
+        .catch(({ response: { data } }) => (this.logMessage = data));
     },
     resetForm() {
       this.username = '';
       this.password = '';
-      this.nickname = '';
     }
   }
 };
