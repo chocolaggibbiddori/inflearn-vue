@@ -1,10 +1,17 @@
 <template>
-  <div>Signup</div>
+  <div>
+    <h1>회원가입</h1>
+    <signup-form></signup-form>
+  </div>
 </template>
 
 <script>
+import SignupForm from '@/components/SignupForm.vue';
+
 export default {
-  name: 'SignupPage'
+  components: {
+    SignupForm
+  }
 };
 </script>
 
