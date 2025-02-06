@@ -29,7 +29,7 @@ export default {
     }),
     logout() {
       this.clearUsername();
-      this.$router.push('/');
+      if (this.$route.name !== 'main') this.$router.push('/');
     }
   }
 };
