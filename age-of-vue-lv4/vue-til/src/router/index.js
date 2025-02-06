@@ -6,7 +6,7 @@ Vue.use(VueRouter);
 const routes = [
   {
     path: '/',
-    redirect: '/login'
+    redirect: '/main'
   },
   {
     path: '/login',
@@ -15,6 +15,10 @@ const routes = [
   {
     path: '/signup',
     component: () => import('@/views/SignupView.vue')
+  },
+  {
+    path: '/main',
+    component: () => import('@/views/MainView.vue')
   },
   {
     path: '*',

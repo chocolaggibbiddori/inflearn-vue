@@ -42,8 +42,12 @@ export default {
 
       loginUser(userData)
         .then(({ data }) => {
-          this.logMessage = `${data.user.username}님 환영합니다!`;
+          const username = data.user.username;
+
+          this.$store.commit('common/setUsername', username);
+          this.logMessage = `${username}님 환영합니다!`;
           this.resetForm();
+          this.$router.push('/main');
         })
         .catch(({ response: { data } }) => (this.logMessage = data));
     },
