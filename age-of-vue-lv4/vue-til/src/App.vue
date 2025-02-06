@@ -1,12 +1,14 @@
 <template>
-  <div id="app">
+  <div class="app">
     <AppHeader />
-    <RouterView />
+    <div class="app-contents">
+      <RouterView />
+    </div>
   </div>
 </template>
 
 <script>
-import AppHeader from '@/components/AppHeader.vue';
+import AppHeader from '@/components/common/AppHeader.vue';
 
 export default {
   components: {
@@ -15,4 +17,7 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+@import './css/common.css';
+@import ' ./css/reset.css';
+</style>
