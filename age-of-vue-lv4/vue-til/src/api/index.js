@@ -15,8 +15,17 @@ function registerUser(userData) {
   return instance.post('/signup', userData);
 }
 
+/**
+ * 로그인 API
+ * @param userData Require username, password
+ * @returns Promise
+ */
 function loginUser(userData) {
   return instance.post('/login', userData);
 }
 
-export { registerUser, loginUser };
+function getPostList() {
+  return instance.get('/posts');
+}
+
+export { registerUser, loginUser, getPostList };
