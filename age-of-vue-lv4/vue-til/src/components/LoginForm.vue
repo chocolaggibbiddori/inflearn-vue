@@ -54,13 +54,15 @@ export default {
       loginUser(userData)
         .then(({ data }) => {
           const username = data.user.username;
+          const token = data.token;
 
           this.$store.commit('common/setUsername', username);
+          this.$store.commit('common/setToken', token);
           this.logMessage = `${username}님 환영합니다!`;
           this.resetForm();
           this.$router.push('/main');
         })
-        .catch(({ response: { data } }) => (this.logMessage = data));
+        .catch(err => (this.logMessage = err));
     },
     resetForm() {
       this.username = '';

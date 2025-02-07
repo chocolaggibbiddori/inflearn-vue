@@ -32,10 +32,12 @@ export default {
   },
   methods: {
     ...mapMutations({
-      clearUsername: 'common/clearUsername'
+      clearUsername: 'common/clearUsername',
+      clearToken: 'common/clearToken'
     }),
     logout() {
       this.clearUsername();
+      this.clearToken();
       if (this.$route.name !== 'main') this.$router.push('/');
     }
   }
