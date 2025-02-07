@@ -32,8 +32,8 @@ export default {
   },
   methods: {
     ...mapMutations({
-      clearUsername: 'common/clearUsername',
-      clearToken: 'common/clearToken'
+      clearUsername: 'common/CLEAR_USERNAME',
+      clearToken: 'common/CLEAR_TOKEN'
     }),
     logout() {
       this.clearUsername();

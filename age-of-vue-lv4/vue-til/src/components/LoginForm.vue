@@ -27,6 +27,7 @@
 <script>
 import { loginUser } from '@/api';
 import { validateEmail } from '@/utils/validation';
+import { mapActions } from 'vuex';
 
 export default {
   data() {
@@ -45,6 +46,9 @@ export default {
     }
   },
   methods: {
+    ...mapActions({
+      login: 'common/LOGIN'
+    }),
     submitForm() {
       const userData = {
         username: this.username,
@@ -53,16 +57,14 @@ export default {
 
       loginUser(userData)
         .then(({ data }) => {
-          const username = data.user.username;
-          const token = data.token;
-
-          this.$store.commit('common/setUsername', username);
-          this.$store.commit('common/setToken', token);
-          this.logMessage = `${username}님 환영합니다!`;
+          this.login(data);
+          this.logMessage = `${data.user.username}님 환영합니다!`;
+        })
+        .catch(err => (this.logMessage = err))
+        .finally(() => {
           this.resetForm();
           this.$router.push('/main');
-        })
-        .catch(err => (this.logMessage = err));
+        });
     },
     resetForm() {
       this.username = '';

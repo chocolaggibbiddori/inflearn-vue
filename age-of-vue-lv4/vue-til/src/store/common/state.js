@@ -1,4 +1,6 @@
+import { getAuthFromCookie, getUserFromCookie } from '@/utils/cookies';
+
 export default {
-  username: '',
-  token: ''
+  username: getUserFromCookie() || '',
+  token: getAuthFromCookie() || ''
 };

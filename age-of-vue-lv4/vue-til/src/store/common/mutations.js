@@ -1,6 +1,6 @@
 export default {
-  setUsername: (state, username) => (state.username = username),
-  clearUsername: state => (state.username = ''),
-  setToken: (state, token) => (state.token = token),
-  clearToken: state => (state.token = '')
+  SET_USERNAME: (state, username) => (state.username = username),
+  CLEAR_USERNAME: state => (state.username = ''),
+  SET_TOKEN: (state, token) => (state.token = token),
+  CLEAR_TOKEN: state => (state.token = '')
 };
