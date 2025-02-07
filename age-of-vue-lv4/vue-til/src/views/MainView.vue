@@ -5,6 +5,10 @@
     <ul v-else>
       <PostListItem v-for="post in postList" :key="post._id" :post="post" />
     </ul>
+
+    <router-link to="/add" class="create-button">
+      <ion-icon name="add-outline"></ion-icon>
+    </router-link>
   </div>
 </template>
 

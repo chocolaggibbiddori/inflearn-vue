@@ -10,6 +10,10 @@ const routes = [
     redirect: '/main'
   },
   {
+    path: '*',
+    component: () => import('@/views/404View.vue')
+  },
+  {
     path: '/login',
     name: 'login',
     component: () => import('@/views/LoginView.vue')
@@ -25,8 +29,9 @@ const routes = [
     component: () => import('@/views/MainView.vue')
   },
   {
-    path: '*',
-    component: () => import('@/views/404View.vue')
+    path: '/add',
+    name: 'add',
+    component: () => import('@/views/PostAddView.vue')
   }
 ];
 

@@ -11,21 +11,25 @@ function createInstance() {
 
 const instance = createInstance();
 
-function registerUser(userData) {
-  return instance.post('/signup', userData);
+function registerUser(user) {
+  return instance.post('/signup', user);
 }
 
 /**
  * 로그인 API
- * @param userData Require username, password
+ * @param user Require username, password
  * @returns Promise
  */
-function loginUser(userData) {
-  return instance.post('/login', userData);
+function loginUser(user) {
+  return instance.post('/login', user);
 }
 
 function getPostList() {
   return instance.get('/posts');
 }
 
-export { registerUser, loginUser, getPostList };
+function createPost(post) {
+  return instance.post('/posts', post);
+}
+
+export { registerUser, loginUser, getPostList, createPost };
