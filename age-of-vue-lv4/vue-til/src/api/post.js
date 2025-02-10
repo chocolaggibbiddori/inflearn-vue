@@ -8,4 +8,8 @@ function createPost(post) {
   return instanceWithAuth.post('/', post);
 }
 
-export { getPostList, createPost };
+function deletePost(postId) {
+  return instanceWithAuth.delete(postId);
+}
+
+export { getPostList, createPost, deletePost };

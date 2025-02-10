@@ -3,7 +3,12 @@
     <h1 class="page-header">Today I Learned</h1>
     <LoadingSpinner v-if="isLoading" />
     <ul v-else>
-      <PostListItem v-for="post in postList" :key="post._id" :post="post" />
+      <PostListItem
+        v-for="post in postList"
+        :key="post._id"
+        :post="post"
+        @refresh="fetchPostList"
+      />
     </ul>
 
     <router-link to="/add" class="create-button">
