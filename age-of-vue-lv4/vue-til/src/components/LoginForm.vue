@@ -25,7 +25,7 @@
 </template>
 
 <script>
-import { loginUser } from '@/api';
+import { loginUser } from '@/api/auth';
 import { validateEmail } from '@/utils/validation';
 import { mapActions } from 'vuex';
 

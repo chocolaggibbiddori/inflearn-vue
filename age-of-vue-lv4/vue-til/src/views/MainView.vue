@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import { getPostList } from '@/api';
+import { getPostList } from '@/api/post';
 import PostListItem from '@/components/posts/PostListItem.vue';
 import LoadingSpinner from '@/components/common/LoadingSpinner.vue';
 
