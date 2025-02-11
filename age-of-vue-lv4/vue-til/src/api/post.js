@@ -1,7 +1,7 @@
 import { instanceWithAuth } from './index';
 
 function getPostList() {
-  return instanceWithAuth.get('/');
+  return instanceWithAuth.get();
 }
 
 function createPost(post) {
@@ -12,4 +12,12 @@ function deletePost(postId) {
   return instanceWithAuth.delete(postId);
 }
 
-export { getPostList, createPost, deletePost };
+function getPost(postId) {
+  return instanceWithAuth.get(postId);
+}
+
+function editPost(postId, post) {
+  return instanceWithAuth.put(postId, post);
+}
+
+export { getPostList, createPost, deletePost, getPost, editPost };

@@ -21,7 +21,9 @@ export default {
     }
   },
   methods: {
-    editPost() {},
+    editPost() {
+      this.$router.push(`/posts/${this.post._id}`);
+    },
     deletePost() {
       if (confirm('Are you sure you want to delete this post?')) {
         deletePost(this.post._id).then(() => this.$emit('refresh'));
