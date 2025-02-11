@@ -3,7 +3,7 @@
     <div class="post-title">{{ post.title }}</div>
     <div class="post-contents">{{ post.contents }}</div>
     <div class="post-time">
-      {{ post.createdAt }}
+      {{ post.createdAt | formatDate }}
       <ion-icon name="create-outline" @click="editPost"></ion-icon>
       <ion-icon name="trash" @click="deletePost"></ion-icon>
     </div>
