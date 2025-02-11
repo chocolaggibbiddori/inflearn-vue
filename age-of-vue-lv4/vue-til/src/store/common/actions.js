@@ -1,4 +1,8 @@
-import { saveAuthToCookie, saveUserToCookie } from '@/utils/cookies';
+import {
+  deleteCookie,
+  saveAuthToCookie,
+  saveUserToCookie
+} from '@/utils/cookies';
 
 export default {
   LOGIN({ commit }, payload) {
@@ -9,5 +13,11 @@ export default {
     commit('SET_TOKEN', token);
     saveAuthToCookie(token);
     saveUserToCookie(username);
+  },
+  LOGOUT({ commit }) {
+    commit('CLEAR_USERNAME');
+    commit('CLEAR_TOKEN');
+    deleteCookie('til_user');
+    deleteCookie('til_auth');
   }
 };

@@ -21,7 +21,7 @@
 </template>
 
 <script>
-import { mapGetters, mapMutations } from 'vuex';
+import { mapActions, mapGetters } from 'vuex';
 
 export default {
   computed: {
@@ -31,14 +31,13 @@ export default {
     })
   },
   methods: {
-    ...mapMutations({
-      clearUsername: 'common/CLEAR_USERNAME',
-      clearToken: 'common/CLEAR_TOKEN'
+    ...mapActions({
+      clearUserInfo: 'common/LOGOUT'
     }),
     logout() {
-      this.clearUsername();
-      this.clearToken();
+      this.clearUserInfo();
       if (this.$route.name !== 'main') this.$router.push('/');
+      else this.$router.go(0);
     }
   }
 };
