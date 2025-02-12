@@ -17,12 +17,25 @@ describe('LoginForm.vue', () => {
     const wrapper = shallowMount(LoginForm, {
       data() {
         return {
-          username: 'test@abc.com'
+          username: 'test'
         };
       }
     });
-    const username = wrapper.find('#username');
-    console.log(username.element.value);
-    console.log(wrapper.vm.isUsernameValid);
+    const warningText = wrapper.find('.warning');
+    expect(warningText.exists()).toBeTruthy();
+  });
+
+  test('ID와 PW가 입력되지 않으면 로그인 버튼이 비활성화 된다.', () => {
+    const wrapper = shallowMount(LoginForm, {
+      data() {
+        return {
+          username: 'a',
+          password: '123'
+        };
+      }
+    });
+
+    const button = wrapper.find('.btn');
+    expect(button.element.classList.contains('disabled')).toBeTruthy();
   });
 });

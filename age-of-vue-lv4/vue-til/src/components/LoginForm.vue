@@ -13,9 +13,13 @@
         </div>
         <div>
           <label for="password">password: </label>
-          <input id="password" type="password" v-model="password" />
+          <input id="password" v-model="password" type="password" />
         </div>
-        <button type="submit" :disabled="!isFormValid" class="btn">
+        <button
+          :class="!isFormValid ? 'disabled' : null"
+          class="btn"
+          type="submit"
+        >
           Login
         </button>
         <p class="log">{{ logMessage }}</p>
